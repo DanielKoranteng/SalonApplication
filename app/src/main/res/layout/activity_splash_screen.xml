@@ -17,14 +17,15 @@
         android:layout_marginTop="200dp" />
 
     <!-- Loading icon -->
-    <ImageView
-        android:id="@+id/loading_icon"
-        android:layout_width="42dp"
-        android:layout_height="40dp"
-        android:src="@drawable/loader"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/loading_icon"-->
+<!--        android:layout_width="42dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:background="@color/black"-->
+<!--        android:src="@drawable/loader"-->
+<!--        android:layout_below="@id/logo"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp"/>-->
 
 
 </RelativeLayout>
