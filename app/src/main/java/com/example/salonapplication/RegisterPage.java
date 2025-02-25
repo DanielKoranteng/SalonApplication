@@ -1,4 +1,4 @@
- package com.example.salonapplication;
+package com.example.salonapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-    public static String TAG="MainActivity";
-
+public class RegisterPage extends AppCompatActivity {
+    private static final String TAG = "RegisterPage";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register_page);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -26,13 +25,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void registerPage(View view) {
-        Log.d(TAG, "connect: Navigating to RegisterPage");
-        startActivity(new Intent(MainActivity.this, RegisterPage.class));
+    public void loginPage(View view) {
+        Log.d(TAG, "connect: Navigating to LoginPage");
+        startActivity(new Intent(RegisterPage.this, LoginPage.class));
     }
 
-    public void loginPage(View view) {
-        Log.d(TAG,"connect:Navigate to LoginPage");
-        startActivity(new Intent(MainActivity.this, LoginPage.class));
+    public void backHome(View view) {
+        Log.d(TAG, "connect: Navigating to MainActivity");
+        startActivity(new Intent(RegisterPage.this, MainActivity.class));
+    }
+
+    public void loginPage2(View view) {
+        Log.d(TAG, "connect: Navigating to LoginPage");
+        startActivity(new Intent(RegisterPage.this, LoginPage.class));
     }
 }
