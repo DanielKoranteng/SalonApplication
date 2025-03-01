@@ -64,6 +64,36 @@
         android:layout_alignParentBottom="true">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_margin="20dp"
+            android:hint="Full Name"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/icon_color"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fullname_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/app_color"
+                android:inputType="textPersonName"
+                android:padding="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,6 +152,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/registerButton"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_margin="20dp"
@@ -130,7 +161,7 @@
             android:fontFamily="sans-serif-black"
             android:onClick="loginPage"
             android:padding="10dp"
-            android:text="CREATE"
+            android:text="SIGNUP"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -158,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:onClick="loginPage2"
+                android:onClick="loginPage"
                 android:padding="5dp"
                 android:text="LOGIN "
                 android:textColor="@color/gray"

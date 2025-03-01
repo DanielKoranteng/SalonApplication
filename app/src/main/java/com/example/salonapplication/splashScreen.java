@@ -18,7 +18,7 @@ public class splashScreen extends AppCompatActivity {
 
         // Delay for 2 seconds and then navigate to WelcomeActivity
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Intent intent = new Intent(splashScreen.this, RegisterPage.class);
+            Intent intent = new Intent(splashScreen.this, MainActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish(); // Close the splash screen
