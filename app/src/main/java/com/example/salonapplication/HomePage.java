@@ -2,11 +2,16 @@ package com.example.salonapplication;
 
 
 
+import static com.example.salonapplication.MainActivity.TAG;
+
+import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.activity.EdgeToEdge;
+
 
 
 
@@ -37,5 +42,10 @@ public class HomePage extends AppCompatActivity {
         ScrollView scrollView = findViewById(R.id.scrollView);
         View serviceSection = findViewById(R.id.serviceSection);
         scrollView.smoothScrollTo(0, serviceSection.getTop());
+    }
+
+    public void bookingButton(View view) {
+        Log.d(TAG, "connect: Navigating to BookingPage");
+        startActivity(new Intent(HomePage.this, ServicesPage.class));
     }
 }

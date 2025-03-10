@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".HomePage">
 
+        <!-- Header Section (Pinned to Top) -->
         <LinearLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
+            android:elevation="4dp"
             android:padding="16dp">
 
-            <!-- Header Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thiene - IperTosano - ..."
+                android:text="PAGE1 BEAUTY SALON"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                tools:ignore="HardcodedText" />
 
-            <!-- Photos Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Photos"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+
 
             <!-- Services, Team, About Section -->
             <LinearLayout
@@ -48,7 +44,8 @@
                     android:gravity="center"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="scrollToServiceSection"/>
+                    android:onClick="scrollToServiceSection"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -59,7 +56,8 @@
                     android:gravity="center"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="scrollToTeamSection"/>
+                    android:onClick="scrollToTeamSection"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -72,392 +70,398 @@
                     android:focusable="true"
                     android:onClick="scrollToAboutSection"/>
             </LinearLayout>
-
-            <!-- Barbershop Info Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Italy Barbershop"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4.9 ★★★★ (1,966)"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Via del Terziario 2, Thiene"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Open until 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Featured Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Featured"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Services Section -->
-            <TextView
-                android:id="@+id/serviceSection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Services"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Taglio Old Style -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Taglio Old Style"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="30 min · Male only"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="8dp"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="€22"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Taglio Bimbo 1-13 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Taglio Bimbo 1-13"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="30 min"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="8dp"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="€15"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- 1 o Manhattan -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="1 o Manhattan"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20 services available"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="8dp"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-            <!-- Team Section -->
-            <TextView
-                android:id="@+id/teamSection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Team"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See all"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="4.9"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="4.9"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Silvia"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Andrea"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Marcos"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Junior Barber"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-            </LinearLayout>
-
-            <!-- About Section -->
-            <TextView
-                android:id="@+id/aboutSection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="About"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Little Italy Barbershop arriva dalla realtà Newyorkese, quella della Mulberry street, dove i nostri nonni e bisnonni hanno fatto la storia affila..."
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Read more"
-                android:textSize="16sp"
-                android:textColor="@color/gray"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Opening Times Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Opening times"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Monday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tuesday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wednesday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thursday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Friday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saturday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sunday"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00 AM - 8:00 PM"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Footer Section -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/gray"
-                android:padding="16dp"
-                android:layout_marginTop="16dp">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Book now"
-                    android:textSize="16sp"
-                    android:backgroundTint="@color/black"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
         </LinearLayout>
-    </ScrollView>
+
+        <!-- Scrollable Content -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header"
+            android:layout_above="@id/footer"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Barbershop Info Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barbershop"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.9 ★★★★ (1,966)"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Open until 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Services Section -->
+                <TextView
+                    android:id="@+id/serviceSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Services"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Taglio Old Style -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Taglio Old Style"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 min · Male only"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€22"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Taglio Bimbo 1-13 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Taglio Bimbo 1-13"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 min"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€15"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 1 o Manhattan -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1 o Manhattan"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 services available"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Team Section -->
+                <TextView
+                    android:id="@+id/teamSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Team"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See all"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4.9"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4.9"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Silvia"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Andrea"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Marcos"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Junior Barber"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <!-- About Section -->
+                <TextView
+                    android:id="@+id/aboutSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Little Italy Barbershop arriva dalla realtà Newyorkese, quella della Mulberry street, dove i nostri nonni e bisnonni hanno fatto la storia affila..."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read more"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Opening Times Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opening times"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wednesday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thursday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saturday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sunday"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 8:00 PM"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Footer Section (Pinned to Bottom) -->
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/light_gray"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:onClick="bookingButton"
+                android:text="Book now"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>

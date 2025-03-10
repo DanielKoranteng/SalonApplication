@@ -6,5 +6,8 @@
     <color name="button_color">#F9834C</color>
     <color name="icon_color">#9E9E9E</color>
     <color name="gray">#808080</color>
+    <color name="blue">#0000FF</color>
+    <color name="light_gray">#E0E0E0</color>"
+
 
 </resources>

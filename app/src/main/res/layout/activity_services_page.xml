@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServicesPage">
+
+    <!-- Header Section (Pinned at the top) -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select services"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tabs for Featured, Taglio Capelli, Barba, Combo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Featured"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Taglio Capelli"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Barba"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Combo"
+                    android:textSize="14sp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingTop="16dp"
+        android:paddingBottom="72dp"> <!-- Add padding to avoid overlapping with footer -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Your scrollable content goes here -->
+            <!-- Taglio Old Style -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taglio Old Style"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 min · Male only"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Il tuo taglio di Capelli che comprende:..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€22"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxTaglioOldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- Taglio Bimbo 1-13 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taglio Bimbo 1-13"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 min"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vuoi cambiare look al tuo bambino sotto ai 13 anni?..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€15"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxTaglioBimbo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- La Manhattan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="La Manhattan"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 hr"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="La Manhattan è la nostra combo che include:..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€35"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxLaManhattan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- Rasatura a Misura Unica -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rasatura a Misura Unica"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 min"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Questo servizio è dedicato a tutti coloro che..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€15"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxRasatura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- Barba Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barba"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Barba Ritual -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barba Ritual"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 min"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vuoi regalarti il nostro rituale per la cura della tua barba?..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€25"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxBarbaRitual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- Barba Con Panni -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barba Con Panni"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 min"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Il servizio Barba con Panni è il nostro servizio completo per la barba..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€17"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxBarbaConPanni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- Rasatura Full -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rasatura Full"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 min"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ami il viso liscio ed un aspetto clean?..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€17"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxRasaturaFull"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+            <!-- Combo Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Combo"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- La Boston -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="La Boston"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 hr"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Il servizio più completo che potessi scegliere!..."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€40"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <!-- Checkbox for this service -->
+                <CheckBox
+                    android:id="@+id/checkboxLaBoston"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select this service"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Footer Section (Pinned at the bottom) -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/light_gray"
+        android:padding="16dp"
+        android:elevation="8dp"
+        android:layout_gravity="bottom"
+    app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
+
+    <TextView
+        android:id="@+id/selectedServices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Services:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:onClick="continueButton"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+</LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

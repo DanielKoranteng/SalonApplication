@@ -13,6 +13,12 @@
         android:theme="@style/Theme.SalonApplication"
         tools:targetApi="31">
         <activity
+            android:name=".WorkersPage"
+            android:exported="false" />
+        <activity
+            android:name=".ServicesPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
