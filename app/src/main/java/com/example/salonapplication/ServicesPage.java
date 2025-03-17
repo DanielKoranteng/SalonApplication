@@ -96,6 +96,6 @@ public class ServicesPage extends AppCompatActivity {
 
     public void continueButton(View view) {
         Log.d(TAG , "Continue button clicked");
-        startActivity(new Intent(ServicesPage.this, WorkersPage.class));
+        startActivity(new Intent(ServicesPage.this, SelectProfessionalActivity.class));
     }
 }

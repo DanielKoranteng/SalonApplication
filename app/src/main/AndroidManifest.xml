@@ -13,7 +13,13 @@
         android:theme="@style/Theme.SalonApplication"
         tools:targetApi="31">
         <activity
-            android:name=".WorkersPage"
+            android:name=".TimeSlotAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".DateTimeSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectProfessionalActivity"
             android:exported="false" />
         <activity
             android:name=".ServicesPage"

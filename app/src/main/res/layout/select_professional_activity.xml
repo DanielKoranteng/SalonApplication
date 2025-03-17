@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:fillViewport="true"
+    tools:context=".SelectProfessionalActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!-- Header Section -->
+<TextView
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Select professional"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:padding="16dp"
+    android:background="@color/white"
+    android:elevation="4dp"
+    tools:ignore="HardcodedText" />
+
+<!-- RecyclerView for workers -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_marginTop="25dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        tools:listitem="@layout/item_professional" />
+
+</RelativeLayout>
