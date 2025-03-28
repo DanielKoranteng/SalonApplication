@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_gray"
+    android:background="@color/white"
     tools:context=".DateTimeSelectionActivity">
 
     <!-- Header Section with Material Design Card -->
@@ -23,6 +23,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -31,9 +32,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/select_date_and_time"
+                android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/selectedProfessionalText"
@@ -61,6 +62,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -68,15 +70,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Select Date"
+                android:textColor="@color/blue"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/blue" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/selectedDateText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:text="Monday, Mar 17, 2025" />
 
@@ -86,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Choose Date"
+                android:textColorLink="#FFD700"
                 app:icon="@drawable/ic_calendar"
                 app:iconGravity="textStart" />
         </LinearLayout>
@@ -106,6 +110,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -113,9 +118,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Select Time"
+                android:textColor="@color/blue"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/blue" />
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/timeSlotRecyclerView"

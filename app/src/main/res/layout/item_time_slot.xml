@@ -16,8 +16,10 @@
         android:id="@+id/timeSlotText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:gravity="center"
         android:padding="12dp"
+        android:textColor="@color/black"
         android:textSize="14sp"
         tools:text="10:00 AM" />
 

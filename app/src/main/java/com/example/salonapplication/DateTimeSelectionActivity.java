@@ -1,7 +1,6 @@
 package com.example.salonapplication;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -102,13 +101,13 @@ public class DateTimeSelectionActivity extends AppCompatActivity {
         selectDateButton.setOnClickListener(v -> showDatePicker());
     }
 
-    /**
-     * Show the Material Date Picker dialog
-     */
-    /**
-     * Show the Material Date Picker dialog
-     * This version ensures that only present and future dates can be selected.
-     */
+
+//      Show the Material Date Picker dialog
+
+
+//     * Show the Material Date Picker dialog
+//     * This version ensures that only present and future dates can be selected.
+//
     /**
      * Show the Material Date Picker dialog
      * Ensures only present and future dates can be selected.
@@ -227,13 +226,15 @@ public class DateTimeSelectionActivity extends AppCompatActivity {
         String message = "Appointment scheduled for " + formattedDate + " at " + selectedTimeSlot;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
-        // Here you would typically:
-        // 1. Save the appointment to your database
-        // 2. Navigate to a confirmation screen
-        // For example:
-        // Intent intent = new Intent(this, AppointmentConfirmationActivity.class);
-        // intent.putExtra("APPOINTMENT_DATE", formattedDate);
-        // intent.putExtra("APPOINTMENT_TIME", selectedTimeSlot);
-        // startActivity(intent);
+        /*
+         Here you would typically:
+         1. Save the appointment to your database
+         2. Navigate to a confirmation screen
+         For example:
+         Intent intent = new Intent(this, AppointmentConfirmationActivity.class);
+         intent.putExtra("APPOINTMENT_DATE", formattedDate);
+         intent.putExtra("APPOINTMENT_TIME", selectedTimeSlot);
+         startActivity(intent);
+        */
     }
 }

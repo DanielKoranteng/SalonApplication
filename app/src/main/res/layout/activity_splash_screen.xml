@@ -10,11 +10,11 @@
     <!-- Logo -->
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="312dp"
-        android:layout_height="203.43dp"
-        android:src="@drawable/slogo"
+        android:layout_width="314dp"
+        android:layout_height="205dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="200dp"
+        android:src="@drawable/slogo" />
 
     <ProgressBar
         android:id="@+id/progressBar"
