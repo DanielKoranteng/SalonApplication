@@ -8,52 +8,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.card.MaterialCardView;
-
 import java.util.List;
 
-/**
- * Adapter for displaying and managing time slot selection
- */
 public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSlotViewHolder> {
-
-    // Data
-    private List<String> timeSlots;
-    private int selectedPosition = -1; // No selection by default
-
-    // Listener for time slot selection events
+    private List<TimeSlot> timeSlots;
     private OnTimeSlotClickListener listener;
+    private int selectedPosition = -1;
 
-    /**
-     * Interface for time slot selection callback
-     */
     public interface OnTimeSlotClickListener {
-        void onTimeSlotClick(String timeSlot);
+        void onTimeSlotClick(TimeSlot timeSlot);
     }
 
-    /**
-     * Constructor
-     * @param timeSlots List of time slots to display
-     */
-    public TimeSlotAdapter(List<String> timeSlots) {
+    public TimeSlotAdapter(List<TimeSlot> timeSlots) {
         this.timeSlots = timeSlots;
-    }
-
-    /**
-     * Update the time slots and refresh the view
-     * @param newTimeSlots New list of time slots
-     */
-    public void updateTimeSlots(List<String> newTimeSlots) {
-        this.timeSlots = newTimeSlots;
-        selectedPosition = -1; // Reset selection
-        notifyDataSetChanged();
-    }
-
-    /**
-     * Set the click listener
-     */
-    public void setOnTimeSlotClickListener(OnTimeSlotClickListener listener) {
-        this.listener = listener;
     }
 
     @NonNull
@@ -66,8 +33,25 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
 
     @Override
     public void onBindViewHolder(@NonNull TimeSlotViewHolder holder, int position) {
-        String timeSlot = timeSlots.get(position);
-        holder.bind(timeSlot, position);
+        TimeSlot timeSlot = timeSlots.get(position);
+        holder.bind(timeSlot, position == selectedPosition);
+        
+        holder.itemView.setOnClickListener(v -> {
+            int currentPosition = holder.getAdapterPosition();
+            if (currentPosition == RecyclerView.NO_POSITION) return;
+            
+            int previousSelected = selectedPosition;
+            selectedPosition = currentPosition;
+            
+            if (previousSelected != -1) {
+                notifyItemChanged(previousSelected);
+            }
+            notifyItemChanged(selectedPosition);
+            
+            if (listener != null) {
+                listener.onTimeSlotClick(timeSlots.get(currentPosition));
+            }
+        });
     }
 
     @Override
@@ -75,48 +59,39 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
         return timeSlots.size();
     }
 
-    /**
-     * ViewHolder for time slot items
-     */
-    class TimeSlotViewHolder extends RecyclerView.ViewHolder {
-        private final MaterialCardView cardView;
-        private final TextView timeSlotText;
+    public void setOnTimeSlotClickListener(OnTimeSlotClickListener listener) {
+        this.listener = listener;
+    }
+
+    public void updateTimeSlots(List<TimeSlot> newTimeSlots) {
+        int oldSelectedPosition = selectedPosition;
+        selectedPosition = -1;
+        
+        this.timeSlots = newTimeSlots;
+        
+        if (oldSelectedPosition != -1) {
+            notifyItemChanged(oldSelectedPosition);
+        }
+        notifyItemRangeChanged(0, newTimeSlots.size());
+    }
+
+    static class TimeSlotViewHolder extends RecyclerView.ViewHolder {
+        private final TextView timeText;
+        private final TextView availabilityText;
+        private final TextView durationText;
 
         TimeSlotViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = itemView.findViewById(R.id.timeSlotCard);
-            timeSlotText = itemView.findViewById(R.id.timeSlotText);
-
-            // Set up click listener
-            cardView.setOnClickListener(v -> {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    // Update selected position
-                    int previousPosition = selectedPosition;
-                    selectedPosition = position;
-
-                    // Notify item changes to update UI
-                    notifyItemChanged(previousPosition);
-                    notifyItemChanged(selectedPosition);
-
-                    // Trigger callback
-                    if (listener != null) {
-                        listener.onTimeSlotClick(timeSlots.get(position));
-                    }
-                }
-            });
+            timeText = itemView.findViewById(R.id.timeSlotText);
+            availabilityText = itemView.findViewById(R.id.availabilityText);
+            durationText = itemView.findViewById(R.id.durationText);
         }
 
-        /**
-         * Bind data to the view
-         */
-        void bind(String timeSlot, int position) {
-            timeSlotText.setText(timeSlot);
-
-            // Set selected state
-            boolean isSelected = position == selectedPosition;
-            cardView.setChecked(isSelected);
-            cardView.setStrokeWidth(isSelected ? 2 : 1);
+        void bind(TimeSlot timeSlot, boolean isSelected) {
+            timeText.setText(timeSlot.getTime());
+            availabilityText.setText(timeSlot.getAvailableSpots() + " spots");
+            durationText.setText(timeSlot.getFormattedDuration());
+            itemView.setSelected(isSelected);
         }
     }
 }

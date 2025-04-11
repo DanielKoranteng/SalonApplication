@@ -3,7 +3,7 @@ package com.example.salonapplication;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import java.util.Calendar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -162,8 +162,8 @@ public class DateTimeSelectionActivity extends AppCompatActivity {
 
         // Set up selection listener
         timeSlotAdapter.setOnTimeSlotClickListener(timeSlot -> {
-            // Store selected time
-            selectedTimeSlot = timeSlot;
+            selectedTimeSlot = timeSlot.getTime();
+            Toast.makeText(this, "Selected: " + timeSlot.getTime(), Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -172,28 +172,60 @@ public class DateTimeSelectionActivity extends AppCompatActivity {
      * In a real app, this would fetch data from a server or database
      */
     private void updateAvailableTimeSlots(long selectedDate) {
-        // For this example, we'll just regenerate the time slots
-        // In a real app, you would query available slots for the selected date
-        timeSlotAdapter.updateTimeSlots(generateTimeSlots());
+        // Convert selectedDate to Calendar for date comparison
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(selectedDate);
+        
+        List<TimeSlot> slots = new ArrayList<>();
+        
+        // Check if it's a weekend
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        boolean isWeekend = (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY);
+        
+        // Different time slots for weekends and weekdays
+        if (isWeekend) {
+            // Weekend hours (10 AM - 6 PM)
+            slots.add(new TimeSlot("10:00 AM", true, 3, 30));
+            slots.add(new TimeSlot("11:00 AM", true, 4, 30));
+            slots.add(new TimeSlot("12:00 PM", true, 2, 30));
+            slots.add(new TimeSlot("2:00 PM", true, 5, 30));
+            slots.add(new TimeSlot("3:00 PM", true, 3, 30));
+            slots.add(new TimeSlot("4:00 PM", true, 4, 30));
+            slots.add(new TimeSlot("5:00 PM", true, 2, 30));
+        } else {
+            // Weekday hours (9 AM - 8 PM)
+            slots.add(new TimeSlot("9:00 AM", true, 5, 30));
+            slots.add(new TimeSlot("10:00 AM", true, 3, 30));
+            slots.add(new TimeSlot("11:00 AM", true, 4, 30));
+            slots.add(new TimeSlot("12:00 PM", true, 2, 30));
+            slots.add(new TimeSlot("2:00 PM", true, 5, 30));
+            slots.add(new TimeSlot("3:00 PM", true, 3, 30));
+            slots.add(new TimeSlot("4:00 PM", true, 4, 30));
+            slots.add(new TimeSlot("5:00 PM", true, 2, 30));
+            slots.add(new TimeSlot("6:00 PM", true, 3, 30));
+            slots.add(new TimeSlot("7:00 PM", true, 4, 30));
+        }
+        
+        timeSlotAdapter.updateTimeSlots(slots);
     }
 
     /**
      * Generate time slots from 9 AM to 5 PM
      */
-    private List<String> generateTimeSlots() {
-        List<String> slots = new ArrayList<>();
-        slots.add("9:00 AM");
-        slots.add("10:00 AM");
-        slots.add("11:00 AM");
-        slots.add("12:00 PM");
-        slots.add("1:00 PM");
-        slots.add("2:00 PM");
-        slots.add("3:00 PM");
-        slots.add("4:00 PM");
-        slots.add("5:00 PM");
-        slots.add("6:00 PM");
-        slots.add("7:00 PM");
-        slots.add("8:00 PM");
+    private List<TimeSlot> generateTimeSlots() {
+        List<TimeSlot> slots = new ArrayList<>();
+        slots.add(new TimeSlot("9:00 AM", true, 5, 30));
+        slots.add(new TimeSlot("10:00 AM", true, 3, 30));
+        slots.add(new TimeSlot("11:00 AM", true, 4, 30));
+        slots.add(new TimeSlot("12:00 PM", true, 2, 30));
+        slots.add(new TimeSlot("1:00 PM", true, 5, 30));
+        slots.add(new TimeSlot("2:00 PM", true, 3, 30));
+        slots.add(new TimeSlot("3:00 PM", true, 4, 30));
+        slots.add(new TimeSlot("4:00 PM", true, 2, 30));
+        slots.add(new TimeSlot("5:00 PM", true, 5, 30));
+        slots.add(new TimeSlot("6:00 PM", true, 3, 30));
+        slots.add(new TimeSlot("7:00 PM", true, 4, 30));
+        slots.add(new TimeSlot("8:00 PM", true, 2, 30));
         return slots;
     }
 

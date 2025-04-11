@@ -25,11 +25,41 @@ public class SelectProfessionalActivity extends AppCompatActivity {
 
         // Create a list of professionals
         List<Professional> professionalList = new ArrayList<>();
-        professionalList.add(new Professional("Any professional", "Maximum availability"));
-        professionalList.add(new Professional("Silvia", ""));
-        professionalList.add(new Professional("Andrea", "4.9 ★"));
-        professionalList.add(new Professional("Marcos Junior Barber", "4.9 ★"));
-        professionalList.add(new Professional("Mattia Barber", "4.8 ★"));
+        professionalList.add(new Professional(
+            "Any professional", 
+            "4.5 ★", 
+            "All Services", 
+            "Various Experience", 
+            "https://example.com/default.jpg"
+        ));
+        professionalList.add(new Professional(
+            "Silvia", 
+            "4.7 ★", 
+            "Hair Styling", 
+            "5 years", 
+            "https://example.com/silvia.jpg"
+        ));
+        professionalList.add(new Professional(
+            "Andrea", 
+            "4.9 ★", 
+            "Coloring Specialist", 
+            "7 years", 
+            "https://example.com/andrea.jpg"
+        ));
+        professionalList.add(new Professional(
+            "Marcos Junior Barber", 
+            "4.9 ★", 
+            "Men's Grooming", 
+            "6 years", 
+            "https://example.com/marcos.jpg"
+        ));
+        professionalList.add(new Professional(
+            "Mattia Barber", 
+            "4.8 ★", 
+            "Beard Styling", 
+            "4 years", 
+            "https://example.com/mattia.jpg"
+        ));
 
         // Set up the adapter
         ProfessionalAdapter adapter = new ProfessionalAdapter(professionalList, this);

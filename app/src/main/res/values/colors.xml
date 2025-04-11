@@ -8,6 +8,7 @@
     <color name="gray">#808080</color>
     <color name="blue">#0000FF</color>
     <color name="light_gray">#E0E0E0</color>"
-
-
+    <color name="available_color">#4CAF50</color>
+        <color name="unavailable_color">#F44336</color>
+        <color name="selected_slot_color">#E8F5E9</color>
 </resources>
